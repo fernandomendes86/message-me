@@ -2,8 +2,6 @@ class MessagesController < ApplicationController
   before_action :require_user
 
   def create
-    current_user.messages
-    
     message = current_user.messages.build(message_params)
     if message.save
       redirect_to root_path

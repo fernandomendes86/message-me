@@ -6,4 +6,5 @@ App.chatroom = App.cable.subscriptions.create "ChatroomChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    window.alert data.foo
+    $('#message-container').append(data.mod_message)
+    $('#message_body').val('')

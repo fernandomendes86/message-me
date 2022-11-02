@@ -23,6 +23,10 @@ scrooll_bottom = function() {
   }
 }
 
+submit_message = function() {
+  $('#message_body').val('')
+}
+
 $(document).on('turbolinks:load', function() {
   $('.ui.dropdown').dropdown();
   $('.message .close').on('click', function() {

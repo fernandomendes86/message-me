@@ -1,4 +1,4 @@
-$('.modals').remove()
+$('.modals').remove() //limpa os ocultos
 $('#teste').html("<%= j render :partial => 'mostra_partial', locals: {body: body, message: message} %>");
 $('.ui.modal')
   .modal('show')

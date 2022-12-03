@@ -3,12 +3,11 @@ class MessagesController < ApplicationController
 
   def create
     message = current_user.messages.build(message_params)
-    valido = params[:valido].present?
+    valido = params[:valido].present? || message.body == 'sim'
     if valido && message.save 
       ActionCable.server.broadcast "chatroom_channel",
       mod_message: message_render(message)
     else
-      @nome = 'Fernando'
       render 'update', locals: { body: message.body, message: message_params }
     end
   end

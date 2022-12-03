@@ -1,0 +1,5 @@
+$('.modals').remove()
+$('#teste').html("<%= j render :partial => 'mostra_partial', locals: {body: body, message: message} %>");
+$('.ui.modal')
+  .modal('show')
+;
